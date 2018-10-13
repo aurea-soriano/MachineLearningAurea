@@ -20,11 +20,16 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
+for i = 1:length(idx)
+  min_diff = inf;
+  for k = 1:K
+    diff = sum((X(i, :) - centroids(k, :)).^2);
+    if (diff < min_diff)
+      idx(i) = k;
+      min_diff = diff;
+    end
+  end
+end
 
 
 % =============================================================
