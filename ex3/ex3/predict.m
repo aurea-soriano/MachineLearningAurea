@@ -25,16 +25,16 @@ for i=1:m,
   %input layer 
   a_1 = [1 X(i,:)];
   
-	%hidden layer
-	z_2 = a_1 * Theta1';
+  %hidden layer
+  z_2 = a_1 * Theta1';
   a_2 = [1 sigmoid(z_2)];
  
-	%output layer
+  %output layer
   z_3 = a_2 * Theta2';
   a_3 = sigmoid(z_3);
   
   % prediction equal to max
-	[_,p(i)] = max(a_3);
+  [_,p(i)] = max(a_3);
   
 end
 
