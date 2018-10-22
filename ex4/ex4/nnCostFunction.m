@@ -105,16 +105,16 @@ for i=1:m
 	% set a_1 to X
 	a_1 = [1 X(i,:)]; 
 	% performing forward propagation
-  z_2 = Theta1 * a_1';
+  	z_2 = Theta1 * a_1';
 	a_2 = [1; sigmoid(z_2)];
 	z_3 = Theta2 * a_2;
 	a_3 = sigmoid(z_3); 
-  h_theta = a_3;
+  	h_theta = a_3;
 
 	% using y to compute delta 
 	delta_3 = a_3 - y_k(:,i); 
 	delta_2 = (Theta2' * delta_3) .* sigmoidGradient([1; z_2]);
-  delta_2 = delta_2(2:length(delta_2)); 
+  	delta_2 = delta_2(2:length(delta_2)); 
 
 	Theta2_grad = Theta2_grad + delta_3 * a_2';
 	Theta1_grad = Theta1_grad + delta_2 * a_1; 
